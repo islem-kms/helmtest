@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "mhelmlaravel.fullname" . }}-api-service
+  labels:
+    app: qutenza-api
+spec:
+  selector:
+    app: qutenza-api
+  ports:
+    - protocol: TCP
+      port: 9000
+      targetPort: 9000
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mhelmlaravel.fullname" . }}-api-deployment
+  labels:
+    app: qutenza-api
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qutenza-api
+  template:
+    metadata:
+      labels:
+        app: qutenza-api
+    spec:
+      containers:
+        - name: {{ include "mhelmlaravel.fullname" . }}-api
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+          - containerPort: 9000
+          args:
+          - -c
+          - (composer self-update --stable || true) && (composer install || true) && (cp .env.example .env || true) && (php artisan key:generate || true) && (php
+            artisan config:cache || true) && (php artisan route:cache || true) && php-fpm
+          command: ["/bin/bash"]
