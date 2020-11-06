@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   mhelmlaravel:
   - apiVersion: v2
+    appVersion: another
+    created: "2020-11-06T14:36:58.499656748+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 1589307496fe02402d33380d26ddc0b22178f39527d1d3e9a5cfa3f81ea5c522
+    name: mhelmlaravel
+    type: application
+    urls:
+    - https://islem-kms.github.io/helmtest/mhelmlaravel-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     appVersion: latest
-    created: "2020-11-06T14:31:45.74559166+01:00"
+    created: "2020-11-06T14:36:58.498904546+01:00"
     description: A Helm chart for Kubernetes
     digest: b43717b7b8d2e65d35eac86feeb0aca17919fba0e5ad5f025890ef690ce7b9b5
     name: mhelmlaravel
@@ -13,7 +23,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: latest
-    created: "2020-11-06T14:31:45.745145385+01:00"
+    created: "2020-11-06T14:36:58.498362793+01:00"
     description: A Helm chart for Kubernetes
     digest: fff6e0964589c74f64c871334726387a5a440cc0e71685fe2b515e3e90c381e7
     name: mhelmlaravel
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://islem-kms.github.io/helmtest/mhelmlaravel-0.1.0.tgz
     version: 0.1.0
-generated: "2020-11-06T14:31:45.744661541+01:00"
+generated: "2020-11-06T14:36:58.496930844+01:00"
